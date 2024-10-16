@@ -1,0 +1,532 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EditKaro.in</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #ffffff;
+            color: #333;
+        }
+        header {
+            background: #2196F3;
+            color: #fff;
+            display: flex;
+            align-items: center;
+            padding: 40px 50px;
+        }
+        header img {
+            height: 80px; 
+            margin-right: 40px;
+        }
+        nav ul {
+            list-style: none;
+            display: flex;
+            margin: 1;
+            padding: 1;
+        }
+        nav ul li {
+            margin-right: 90px;
+        }
+        nav ul li a {
+            color: #fff;
+            text-decoration: none;
+            transition: color 0.3s;
+            font-size: 23px;
+        }
+        nav ul li a:hover {
+            color: #ffe0b2;
+        }
+        .content {
+            padding: 50px;
+            text-align: left; 
+        }
+        .intro {
+            margin: 20px 0;
+            font-size: 20px; 
+        }
+        .welcome-text {
+            font-size: 150px; 
+            margin: 0;
+            color:blue;
+        }
+        .editkaro-text {
+            font-size: 70px; 
+            margin: 0;
+            color:lightblue;
+        }
+         .description-text {
+            font-size: 40px;
+            margin-top: 10px;
+       }
+        .cta-button {
+            display: inline-block;
+            padding: 10px 20px;
+            margin: 20px 10px 0 0;
+            background-color: #2196F3;
+            color: #fff;
+            text-decoration: none;
+            border-radius: 20px; 
+            font-size: 18px;
+            transition: background-color 0.3s;
+        }
+        .cta-button:hover {
+            background-color: #1976D2; /* Darker shade on hover */
+        }
+        .about-section {
+            display: flex;
+            align-items: flex-start; /* Align text to top of image */
+            margin-top: 240px;
+        }
+        .about-image {
+            flex: 1; /* Take up 50% of the space */
+            max-width: 10%; /* Ensure image is responsive */
+            margin-right: 50px; /* Space between text and image */
+        }
+        .about-text {
+            flex: 2;
+            font-size:23px;
+        }
+        .services-box {
+            padding: 20px;
+            background-color: #e0f7fa;
+            margin-top: 40px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: flex-start;
+            width: calc(100% - 40px);
+            max-width: calc(1200px + 5cm);
+            border-radius: px;
+        }
+        .services-title {
+            font-size: 46px;
+            font-weight: bold;
+            margin-bottom: 40px;
+            text-align: left;
+            width: 100%;
+        }
+        .service-item {
+            width: 5cm;
+            height: 6cm;
+            margin: 20px;
+            padding: 10px;
+            background-color: #ffffff;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: transform 0.3s, box-shadow 0.3s;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+        .service-item:hover {
+            transform: scale(1.02);
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+        }
+        .service-icon {
+            font-size: 40px;
+            margin-bottom: 10px;
+            color: #2196F3;
+        }
+        .service-name {
+            font-size: 20px;
+            font-weight: 900;
+            margin: 0;
+        }
+        .service-description {
+            font-size: 14px;
+            text-align: center;
+        }
+        .portfolio-title {
+            margin-top: 60px;
+            font-size: 46px;
+            font-weight: bold;
+            width: 100%;
+            text-align: left;
+        }
+        .category-buttons {
+            margin-top: 20px;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: flex-start;
+            width: 100%;
+        }
+        .portfolio-box {
+            margin: 10px;
+            padding: 10px;
+            background-color: #e0f7fa;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            cursor: pointer;
+            transition: transform 0.3s;
+            width: 150px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        .portfolio-box:hover {
+            transform: scale(1.05);
+        }
+        .portfolio-image {
+            width: 100%;
+            height: 100px;
+            object-fit: cover;
+            border-radius: 8px;
+            margin-bottom: 5px;
+        }
+        footer {
+            text-align: center;
+            padding: 10px;
+            background: #424242;
+            color: #fff;
+        }
+        .category-button {
+            margin: 10px;
+            padding: 10px 20px;
+            background-color: #2196F3;
+            border-radius: 25px;
+            text-align: center;
+            font-size: 16px;
+            font-weight: bold;
+            color: #fff;
+            text-decoration: none;
+            display: inline-block;
+            transition: background-color 0.3s;
+        }
+        .category-button:hover {
+            background-color: #1976D2; /* Darker shade on hover */
+        }
+
+        /* Contact Us Section */
+        .contact-section {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 60px;
+            padding: 20px;
+            background-color: #e0f7fa;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+        .contact-info {
+            flex: 1;
+            padding: 20px;
+            border-right: 2px solid #ccc;
+        }
+        .contact-info h2, .social-media h2 {
+            margin-top: 0;
+        }
+        .social-media {
+            flex: 1;
+            padding: 20px;
+        }
+        .social-button {
+    display: inline-block; /* Ensure it's a block element */
+    padding: 10px 20px; /* Adjust padding if necessary */
+    margin: 10px; /* Space between buttons */
+    background-color: #2196F3; /* Same color as the cta-button */
+    border-radius: 25px; /* Same border radius */
+    color: #fff; /* Text color */
+    text-decoration: none; /* No underline */
+    transition: background-color 0.3s;
+}
+
+.social-button:hover {
+    background-color: #1976D2; /* Darker shade on hover */
+}
+        }
+        .social-button i {
+            margin-right: 10px;
+        }
+
+        /* Modal Styles */
+        .modal {
+            display: none; /* Hidden by default */
+            position: fixed; 
+            z-index: 1000; 
+            left: 0;
+            top: 0;
+            width: 100%; 
+            height: 100%; 
+            overflow: auto; 
+            background-color: rgb(0,0,0); 
+            background-color: rgba(0,0,0,0.9); 
+            padding-top: 60px; 
+        }
+        .modal-content {
+            margin: 5% auto; 
+            display: block;
+            width: 80%; 
+            max-width: 700px; 
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+        }
+        .close {
+            position: absolute;
+            top: 15px;
+            right: 35px;
+            color: #fff;
+            font-size: 40px;
+            font-weight: bold;
+            transition: 0.3s;
+        }
+        .close:hover,
+        .close:focus {
+            color: #bbb;
+            text-decoration: none;
+            cursor: pointer;
+        }
+        /* Form styles */
+        .contact-form {
+            display: none; /* Hidden by default */
+            margin-top: 20px;
+        }
+        .contact-form input, .contact-form textarea {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+        .contact-form button {
+            padding: 10px 20px;
+            background-color: #2196F3;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        .contact-form button:hover {
+            background-color: #1976D2;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <img src="DALL·E 2024-10-14 20.35.21 - A clean, modern, and minimalistic logo for a website named 'Editkaro.in' that provides video editing services. The logo should feature the brand name .png" alt="Logo" /> <!-- Replace with your logo path -->
+        <nav>
+            <ul>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#services">Services</a></li>
+                <li><a href="#portfolio">Portfolio</a></li>
+                <li><a href="#contact">Contact Us</a></li>
+            </ul>
+        </nav>
+    </header>
+    
+    <div class="content" id="home">
+        <p class="intro">Professional marketing solutions, including social media management and video editing.</p>
+        <h1 class="welcome-text">Welcome to</h1>
+        <h1 class="editkaro-text">EditKaro.in</h1>
+        <p>We specialize in creative editing solutions that enhance your brand's message.</p>
+        
+        <!-- Button -->
+        <a href="#portfolio" class="cta-button">Our Work</a>
+        
+        <!-- About Section -->
+        <div id="about" class="about-section">
+                        <div class="about-text">
+                <h2>About Us</h2>
+                <p>
+                    At EditKaro.in, we are passionate about transforming your creative vision into reality. Founded by a team of dedicated professionals with expertise in video editing, digital marketing, and content creation, our mission is to empower brands by delivering high-quality, engaging content that resonates with their target audience.
+                </p>
+                <p>
+                    We believe that every brand has a unique story to tell. Our collaborative approach ensures that we understand your goals and aspirations, allowing us to deliver customized solutions that exceed your expectations.
+                </p>
+                <!-- Get Started Button Below About Us Text -->
+                <a href="#contact" class="cta-button">Get Started</a>
+            </div>
+        </div>
+
+        <!-- Services Section -->
+        <div id="services" class="services-box">
+            <div class="services-title">Our Services</div>
+            <div class="service-item" onclick="toggleActive(this)">
+                <i class="fas fa-video service-icon"></i>
+                <p class="service-name">Video Editing</p>
+                <p class="service-description">Our team transforms raw footage into professional, engaging videos that tell your brand's story effectively.</p>
+            </div>
+            <div class="service-item" onclick="toggleActive(this)">
+                <i class="fas fa-chart-line service-icon"></i>
+                <p class="service-name">Digital Marketing Strategy</p>
+                <p class="service-description">We develop targeted strategies to increase your online presence and drive traffic to your brand.</p>
+            </div>
+            <div class="service-item" onclick="toggleActive(this)">
+                <i class="fas fa-pencil-alt service-icon"></i>
+                <p class="service-name">Content Creation</p>
+                <p class="service-description">Our team creates compelling content that resonates with your audience, helping you establish authority in your niche.</p>
+            </div>
+            <div class="service-item" onclick="toggleActive(this)">
+                <i class="fas fa-flag service-icon"></i>
+                <p class="service-name">Brand Development</p>
+                <p class="service-description">We help you build a strong brand identity that resonates with your target audience and stands out in the market.</p>
+            </div>
+        </div>
+
+        <!-- Our Portfolio Section -->
+        <div id="portfolio">
+            <div class="portfolio-title">Our Portfolio</div>
+            <!-- Category Buttons -->
+            <div class="category-buttons">
+                <a href="#short-form-videos" class="category-button" onclick="playVideo('Iman Gadhzi Tryout (3).mp4')">Short-Form Videos</a>
+                <a href="#long-form-videos" class="category-button" onclick="playVideo('Ruri Ohama Re-edited (1).mp4')">Long-Form Videos</a>
+                <a href="#gaming-videos" class="category-button" onclick="playVideo('Gaming Edited YT Video (1) (1).mp4')">Gaming Videos</a>
+                <a href="#football-edits" class="category-button" onclick="playVideo('Ronaldo vs messi (1) (1).mp4')">Football Edits</a>
+                <a href="#ecommerce-ads" class="category-button" onclick="playVideo('1st Mockup Edit (1).mp4')">eCommerce Ads</a>
+                <a href="#documentary-style" class="category-button" onclick="playVideo('Mohak Mangal Documentry Style (1).mp4')">Documentary Style</a>
+                <a href="#color-grading" class="category-button" onclick="playVideo('Color Grading (2) (1).mp4')">Color Grading</a>
+                <a href="#anime-videos" class="category-button" onclick="playVideo('Comp 1_1 (1) (1).mp4')">Anime Videos</a>
+                <a href="#ads" class="category-button" onclick="playVideo('Coca Cola Landing Page AD (1) (1).mp4')">Ads</a>
+            </div>
+
+            <div class="category-buttons">
+                <div class="portfolio-box" onclick="playVideo('Iman Gadhzi Tryout (3).mp4')">
+                    <img src="image-5-2-1024x852.webp" alt="Short-Form Videos" class="portfolio-image">
+                    <div>Short-Form Videos</div>
+                </div>
+                <div class="portfolio-box" onclick="playVideo('Ruri Ohama Re-edited (1).mp4')">
+                    <img src="blog_img_long-form_video.jpg" alt="Long-Form Videos" class="portfolio-image">
+                    <div>Long-Form Videos</div>
+                </div>
+                <div class="portfolio-box" onclick="playVideo('Gaming Edited YT Video (1) (1).mp4')">
+                    <img src="pexels-photo-442576.webp" alt="Gaming Videos" class="portfolio-image">
+                    <div>Gaming Videos</div>
+                </div>
+                <div class="portfolio-box" onclick="playVideo('Ronaldo vs messi (1) (1).mp4')">
+                    <img src="1002614356.jpg" alt="Football Edits" class="portfolio-image">
+                    <div>Football Edits</div>
+                </div>
+                <div class="portfolio-box" onclick="playVideo('1st Mockup Edit (1).mp4')">
+                    <img src="showing-cart-trolley-shopping-online-sign-graphic_53876-133967.jpg" alt="eCommerce Ads" class="portfolio-image">
+                    <div>eCommerce Ads</div>
+                </div>
+                <div class="portfolio-box" onclick="playVideo('Mohak Mangal Documentry Style (1).mp4')">
+                    <img src="65071c540a5c94b4afbe990e_5ec507c22916739d68a067dd_Melissa27Shaughnessy-2.jpeg" alt="Documentary Style" class="portfolio-image">
+                    <div>Documentary Style</div>
+                </div>
+                <div class="portfolio-box" onclick="playVideo('Color Grading (2) (1).mp4')">
+                    <img src="il_570xN.4635819255_i7zo.webp" alt="Color Grading" class="portfolio-image">
+                    <div>Color Grading</div>
+                </div>
+                <div class="portfolio-box" onclick="playVideo('Comp 1_1 (1) (1).mp4')">
+                    <img src="pngtree-anime-boy-lofi-cloud-sunset-image_16124755.jpg" alt="Anime Videos" class="portfolio-image">
+                    <div>Anime Videos</div>
+                </div>
+                <div class="portfolio-box" onclick="playVideo('Coca Cola Landing Page AD (1) (1).mp4')">
+                    <img src="digital-marketing-commerce-online-sale-600nw-2493638089.webp" alt="Ads" class="portfolio-image">
+                    <div>Ads</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Contact Us Section -->
+        <div id="contact" class="contact-section">
+            <div class="contact-info">
+                <h2>Contact Us</h2>
+                <p>Phone: +1 (123) 456-7890</p>
+                <p>Email: info@editkaro.in</p>
+                <p>Address: 123 EditKaro Lane, Creative City, CR 12345</p>
+                <button class="cta-button" onclick="openForm()">Contact Form</button>
+                <div class="contact-form" id="contactForm">
+                    <input type="text" placeholder="Your Name" required>
+                    <input type="email" placeholder="Your Email" required>
+                    <textarea placeholder="Your Message" rows="4" required></textarea>
+                    <button onclick="sendForm()">Send</button>
+                    <button onclick="closeForm()">Cancel</button>
+                </div>
+            </div>
+            <div class="social-media">
+                <h2>Follow Us</h2>
+                <a href="https://www.instagram.com" class="social-button"><i class="fab fa-instagram"></i> Instagram</a>
+                <a href="https://www.youtube.com" class="social-button"><i class="fab fa-youtube"></i> YouTube</a>
+                <a href="https://www.twitter.com" class="social-button"><i class="fab fa-twitter"></i> Twitter</a>
+                <a href="https://www.linkedin.com" class="social-button"><i class="fab fa-linkedin"></i> LinkedIn</a>
+                <a href="https://www.github.com" class="social-button"><i class="fab fa-github"></i> GitHub</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Video Modal -->
+    <div id="videoModal" class="modal">
+        <span class="close" onclick="closeModal()">&times;</span>
+        <video id="videoPlayer" class="modal-content" controls>
+            <source id="videoSource" src="" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+    </div>
+
+    <footer>
+        <p>&copy; 2024 Edit Karo</p>
+    </footer>
+
+    <script>
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('nav ul li a').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                const targetId = this.getAttribute('href');
+                document.querySelector(targetId).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+
+        // Optional: Toggle active state on service items
+        function toggleActive(element) {
+            element.classList.toggle('active');
+        }
+
+        // Function to open contact form
+        function openForm() {
+            document.getElementById('contactForm').style.display = 'block';
+        }
+
+        // Function to close contact form
+        function closeForm() {
+            document.getElementById('contactForm').style.display = 'none';
+        }
+
+        // Function to send form (Placeholder function)
+        function sendForm() {
+            alert("Form submitted!"); // Placeholder for form submission
+            closeForm(); // Close the form after submission
+        }
+
+        // Function to play video
+        function playVideo(videoSource) {
+            const modal = document.getElementById('videoModal');
+            const videoPlayer = document.getElementById('videoPlayer');
+            const videoElement = document.getElementById('videoSource');
+
+            videoElement.src = videoSource;
+            videoPlayer.load();
+            modal.style.display = "block"; // Show the modal
+        }
+
+        // Function to close the modal
+        function closeModal() {
+            const modal = document.getElementById('videoModal');
+            const videoPlayer = document.getElementById('videoPlayer');
+            videoPlayer.pause(); // Pause the video
+            modal.style.display = "none"; // Hide the modal
+        }
+
+        // Close the modal when clicking outside of the video
+        window.onclick = function(event) {
+            const modal = document.getElementById('videoModal');
+            if (event.target === modal) {
+                closeModal();
+            }
+        }
+    </script>
+</body>
+</html>

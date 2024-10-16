@@ -1,0 +1,111 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    padding: 20px;
+    background-color: #333;
+    color: white;
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+}
+
+nav ul li {
+    display: inline;
+    margin-left: 20px;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+}
+
+.content {
+    padding: 20px;
+}
+
+.intro {
+    font-size: 18px;
+}
+
+.welcome-text {
+    font-size: 48px;
+    color: #ff9900;
+}
+
+.editkaro-text {
+    font-size: 48px;
+    color: #00cc99;
+}
+
+.cta-button {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #ff9900;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+}
+
+.about-section, .services-box, .portfolio-title, .contact-section {
+    margin-top: 40px;
+}
+
+.service-item {
+    cursor: pointer;
+    margin: 10px 0;
+}
+
+.service-description {
+    display: none;
+}
+
+.service-item.active .service-description {
+    display: block;
+}
+
+.category-buttons {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.category-button {
+    margin: 5px;
+}
+
+.portfolio-box {
+    cursor: pointer;
+    margin: 10px;
+}
+
+.portfolio-image {
+    width: 100px;
+    height: auto;
+}
+
+.contact-section {
+    background-color: #f1f1f1;
+    padding: 20px;
+}
+
+.contact-form {
+    display: none;
+}
+
+.contact-form.active {
+    display: block;
+}
+
+footer {
+    text-align: center;
+    padding: 20px;
+    background-color: #333;
+    color: white;
+}

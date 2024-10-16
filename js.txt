@@ -1,0 +1,21 @@
+function toggleActive(element) {
+    const isActive = element.classList.contains('active');
+    const serviceItems = document.querySelectorAll('.service-item');
+    serviceItems.forEach(item => item.classList.remove('active'));
+    if (!isActive) {
+        element.classList.add('active');
+    }
+}
+
+function playVideo(videoFile) {
+    // Functionality to play the video (you may want to implement this according to your needs)
+    console.log(`Playing video: ${videoFile}`);
+}
+
+function openForm() {
+    document.getElementById('contactForm').classList.add('active');
+}
+
+function closeForm() {
+    document.getElementById('contactForm').classList.remove('active');
+}
